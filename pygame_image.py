@@ -25,14 +25,17 @@ def main():
 
         #キーボード入力
         key_lst = pg.key.get_pressed()#練習8-2　キーリストの取得
+        dx, dy = 0, 0
         if key_lst[pg.K_UP]:
-            pl_rct.move_ip((0,-1))
+            dy = -1
         if key_lst[pg.K_DOWN]:
-            pl_rct.move_ip((0,1))
+            dy = 1
         if key_lst[pg.K_LEFT]:
-            pl_rct.move_ip((-1, 0))
+            dx = -1
         if key_lst[pg.K_RIGHT]:
-            pl_rct.move_ip((2, 0))#演習1　右へ倍速で移動
+            dx = 2#演習1　右へ倍速で移動
+
+        pl_rct.move_ip((dx, dy))#演習2
 
         #背景表示
         x = -(tmr%3200)
