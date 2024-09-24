@@ -32,9 +32,9 @@ def main():
         if key_lst[pg.K_LEFT]:
             pl_rct.move_ip((-1, 0))
         if key_lst[pg.K_RIGHT]:
-            pl_rct.move_ip((1, 0))
+            pl_rct.move_ip((2, 0))#演習1　右へ倍速で移動
 
-        #背景移動
+        #背景表示
         x = -(tmr%3200)
         screen.blit(bg_img, [x, 0])#練習6
         screen.blit(bg_img_f, [x+1600, 0])#練習7
@@ -42,6 +42,8 @@ def main():
         screen.blit(bg_img, [x+3200, 0])#練習7
         screen.blit(bg_img_f, [x+4800, 0])#練習7
 
+        #プレイヤー機表示
+        pl_rct.move_ip((-1, 0))#演習1　非操作時、左に流れる
         screen.blit(pl_img, pl_rct) #練習4
         
         pg.display.update()
