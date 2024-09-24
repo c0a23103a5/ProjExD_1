@@ -10,6 +10,9 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg")
+    pl_img = pg.image.load("fig/3.png")#練習2
+    pl_img = pg.transform.flip(pl_img, True, False)#練習2
+
     tmr = 0
     while True:
         for event in pg.event.get():
